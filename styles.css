@@ -1,0 +1,330 @@
+/* Base styles for mobile */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Verdana, Tahoma, sans-serif;
+    font-size: 1rem;
+    background-color: #fcfcfc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.QR {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+ .QR-content {
+   background-color: #fff;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   text-align: center;
+   padding: 20px;
+   max-width: 90vw;
+   max-height: 90vh;
+ }
+  
+/* Style for the close button */
+.close-QR {
+  position: absolute;
+  top: -5px;
+  right: 0px;
+  font-size: 30px;
+  font-weight: 900;
+  cursor: pointer;
+}
+  
+#QR-toggle {
+  display: none;
+}
+
+/* When the QR is open, display it */
+#QR-toggle:checked + .QR {
+  display: block;
+  z-index: 1;
+}
+
+#QR-image {
+    max-width: 80vw;
+    max-height: 80vh;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+h2 {
+    font-size: 0.8rem;
+    font-style: italic;
+    font-weight: 400;
+}
+
+main {
+    margin-top: -4.0625rem;
+}
+
+main, aside, section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button {
+    all: unset;
+    cursor: pointer;
+}
+
+button:focus {
+    outline: revert;
+}
+
+section {
+    justify-content: center;
+    margin: 1.2rem 0px;
+    width: 90vw;
+    gap: 1rem;
+    text-align: center;
+}
+
+hr {
+    height: 0.063rem;
+    width: 100%;
+    background-color: #cdcdcd;
+    max-width: 32rem;
+}
+
+.contactbutton {
+    height: 75px;
+    width: 75px;
+    background-color: #193540;
+    border-radius: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.contactbutton > img {
+    height: 2rem;
+    width: 2rem;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: .5rem;
+    width: 100%;
+    max-width: 28rem;
+    padding: 1rem;
+    margin: 0.3rem;
+    border-radius: .313rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.primary {
+    background-color: #193540;
+    color: #fcfcfc;
+    border: 0.125rem solid #193540;
+}
+
+.secondary {
+    color: #193540;
+    border: 0.125rem solid #193540;
+}
+
+#companyheader {
+    width: 100%;
+    height: auto;
+}
+
+#profilepicture {
+    position: relative;
+    width: 9.375rem;
+    height: 9.375rem;
+    border-radius: 5%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    /* top: 50%; */
+    z-index: 1;
+}
+
+#bio {
+    text-align: center;
+    max-width: 22rem;
+    margin: 1.2rem 0px;
+}
+
+#contact, #socials {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100vw;
+    max-width: 27rem;
+}
+
+#social {
+    height: 2.2rem;
+    width: 2.2rem;
+    text-decoration: none;
+}
+
+#section-bio {
+    display: none;
+}
+
+.intro {
+    display: none;
+}
+
+footer {
+    text-align: center;
+    font-size: 0.7rem;
+    margin-bottom: 1rem;
+}
+
+footer.imprint {
+    margin-top: 1rem;
+}
+
+.imprint {
+    text-decoration: none;
+    color: #193540;
+}
+
+#generator {
+    font-weight: 900;
+    color: #193540;
+    text-decoration: none;
+}
+
+/* Tablet styles (min-width: 768px) */
+@media screen and (min-width: 768px) {
+    aside {
+        margin-top: -5rem;
+    }
+    
+    #profilepicture {
+        width: 12.5rem;
+        height: 12.5rem;
+        left: 20%;
+    }
+
+    #bio {
+        max-width: 29.625rem;
+      }
+
+    #section-bio {
+        display: none;
+    }
+
+    #contact {
+        width: 100%;
+    }
+  }
+  
+/* Laptop/desktop styles (min-width: 1150px) */
+@media screen and (min-width: 1150px) {
+  body {
+      display: flex;
+      flex: content;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100vw;
+      background-color: #193540;
+  }
+  
+  
+  #container {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      border-radius: 0.9375rem;
+      background-color: #fcfcfc;
+      max-height: 92vh;
+    }
+    
+    header {
+        display: flex;
+        flex-direction: row-reverse;
+        max-width: fit-content;
+    }
+    
+    #companyheader {
+      width: auto;
+      height: 12.5rem;
+      border-radius: 0px 0.9375rem 0px 0px;
+    }
+    
+    #profilepicture {
+        width: 12.5rem;
+        height: 12.5rem;
+        border-radius: 0.9375rem 0px 0px 0px;
+        left: 0%;
+        top: 0%;
+        transform: none;
+    }
+
+    main {
+        position: relative;
+        flex-direction: row;
+        max-width: 50rem;
+        margin-top: 0px;
+    }
+
+    aside {
+        width: 12.5rem;
+        margin-top: unset;
+    }
+
+    aside > h1, h2, #bio {
+        display: none;
+    }
+
+    section {
+        position: relative;
+        max-width: 50rem;
+        max-height: 47vh;
+        overflow: auto;
+        margin: 0px 0px;
+    }
+
+    .intro {
+        display: unset;
+    }
+
+    h1.intro {
+        margin-top: 22rem;
+    }
+
+    #section-bio {
+        display: unset;
+        max-width: 32rem;
+    }
+
+    #socials {
+        margin-bottom: 1rem;
+    }
+
+    #contact {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin: 1rem 0px;
+        width: 13.75rem;
+    }
+}
